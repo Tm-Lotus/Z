@@ -8,9 +8,9 @@ def start_panel(_):
     buttons = [
         [
             InlineKeyboardButton(
-                text="𖣂 ضيفني 𖣂", url=f"https://t.me/{app.username}?startgroup=true"
+                text="اضغط لاضافتي لمجموعتك✅", url=f"https://t.me/{app.username}?startgroup=true"
             ),
-            InlineKeyboardButton(text="𖣂 الدعم 𖣂", url=config.SUPPORT_CHAT),
+            InlineKeyboardButton(text=" الدعم ", url=config.SUPPORT_CHAT),
         ],
     ]
     return buttons
@@ -20,18 +20,18 @@ def private_panel(_):
     buttons = [
         [
             InlineKeyboardButton(
-                text="𖣂 ضيفني 𖣂",
+                text="اضغط لاضافتي لمجموعتك✅",
                 url=f"https://t.me/{app.username}?startgroup=true",
             )
         ],
-        [InlineKeyboardButton(text="𖣂 **الـاوامر** 𖣂", callback_data="settings_back_helper")],
+        [InlineKeyboardButton(text="اوامــــر الـــبـــوت📚", callback_data="settings_back_helper")],
         [
-            InlineKeyboardButton(text="𖣂 👤 مطور البوت 𖣂", user_id=config.OWNER_ID),
-            InlineKeyboardButton(text="𖣂 الدعم 𖣂", url=config.SUPPORT_CHAT),
+            InlineKeyboardButton(text="مطور البوت", user_id=config.OWNER_ID),
+            InlineKeyboardButton(text=" الدعم ", url=config.SUPPORT_CHAT),
         ],
         [
-            InlineKeyboardButton(text="𖣂 قناة المطور 𖣂", url=config.SUPPORT_CHANNEL),
-            InlineKeyboardButton(text="𖣂 قناة السورس 𖣂", url=f"https://t.me/Source_Ze"),
+            InlineKeyboardButton(text="قناة المطور ", url=config.SUPPORT_CHANNEL),
+            InlineKeyboardButton(text="قناة السورس ", url=f"https://t.me/jx_xm"),
         ],
     ]
     return buttons
