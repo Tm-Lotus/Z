@@ -1,37 +1,56 @@
-from pyrogram.types import InlineKeyboardButton
+from typing import Union
+
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 import config
-from ZeMusic import app
 
 
-def start_panel(_):
+def start_pannel(_, BOT_USERNAME, OWNER: Union[bool, int] = None):
     buttons = [
         [
             InlineKeyboardButton(
-                text="𖣂 ضيفني 𖣂", url=f"https://t.me/{app.username}?startgroup=true"
-            ),
-            InlineKeyboardButton(text="𖣂 الدعم 𖣂", url=config.SUPPORT_CHAT),
+                text="اضغط لاضافتي لمجموعتك✅",
+                url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
+            )
         ],
-    ]
+        [
+            InlineKeyboardButton(
+                text="🗒 الاوامر",
+                callback_data="settings_back_helper",
+            ),
+            InlineKeyboardButton(
+                text="المساعدة", callback_data="settings_helper"
+            ),
+        ],
+     ]
     return buttons
 
 
-def private_panel(_):
+def private_panel(_, BOT_USERNAME, OWNER: Union[bool, int] = None):
     buttons = [
         [
             InlineKeyboardButton(
-                text="𖣂 ضيفني 𖣂",
-                url=f"https://t.me/{app.username}?startgroup=true",
+                text="اضغط لاضافتي لمجموعتك✅",
+                url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
             )
         ],
-        [InlineKeyboardButton(text="𖣂 **الـاوامر** 𖣂", callback_data="settings_back_helper")],
         [
-            InlineKeyboardButton(text="𖣂 👤 مطور البوت 𖣂", user_id=config.OWNER_ID),
-            InlineKeyboardButton(text="𖣂 الدعم 𖣂", url=config.SUPPORT_CHAT),
+            InlineKeyboardButton(
+                text="🗒 الاوامر", callback_data="settings_back_helper"
+            )
         ],
         [
-            InlineKeyboardButton(text="𖣂 قناة المطور 𖣂", url=config.SUPPORT_CHANNEL),
-            InlineKeyboardButton(text="𖣂 قناة السورس 𖣂", url=f"https://t.me/Source_Ze"),
+            InlineKeyboardButton(
+                text="مطور السورس", url=f"https://t.me/M0R_3b1"
+            ),
+            InlineKeyboardButton(
+                text="👤 مطور البوت", user_id=OWNER
+            )
         ],
-    ]
+        [
+            InlineKeyboardButton(
+                text=" ⌞𝙎َِ𝙊َِ𝙐َِ𝙍َِ𝘾َِ𝙀 َِ𝙈َِ𝙊َِ𝙍3َِ𝘽⌝ ", url=f"https://t.me/UC_IU"
+            )
+        ],
+     ]
     return buttons
